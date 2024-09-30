@@ -1,0 +1,43 @@
+{
+  "dashboard": {
+    "title": "MariaDB Metrics",
+    "panels": [
+      {
+        "title": "Connections",
+        "type": "graph",
+        "targets": [
+          {
+            "target": "mysql_global_status_connections"
+          }
+        ]
+      },
+      {
+        "title": "Total Queries",
+        "type": "graph",
+        "targets": [
+          {
+            "target": "mysql_global_status_queries"
+          }
+        ]
+      },
+      {
+        "title": "Select Queries",
+        "type": "graph",
+        "targets": [
+          {
+            "target": "mysql_global_status_selects"
+          }
+        ]
+      },
+      {
+        "title": "Write Operations",
+        "type": "graph",
+        "targets": [
+          {
+            "target": "(mysql_global_status_updates + mysql_global_status_insert + mysql_global_status_delete)"
+          }
+        ]
+      }
+    ]
+  }
+}
