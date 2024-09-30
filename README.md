@@ -11,11 +11,11 @@
 ## Установка и запуск
 
 1. Клонируйте репозиторий:
-   git clone <repository_url>
+   git clone https://github.com/DevOps-Efanov/ansible_deployment.git
    cd ansible-deployment
 
-2. Настройте файл hosts, указав IP-адреса ваших серверов.
+3. Настройте файл hosts, указав IP-адреса ваших серверов.
 
-3. Запустите playbook:
+4. Запустите playbook:
    ansible-playbook -i hosts playbook.yml --ask-become-pass
    После выполнения этих шагов на ваших серверах будут развернуты необходимые сервисы с соответствующими конфигурациями и дашбордами.
