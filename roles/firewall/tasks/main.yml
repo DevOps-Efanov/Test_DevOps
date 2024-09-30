@@ -1,0 +1,9 @@
+---
+- name: Configure nftables firewall rules
+  nftables:
+    table: filter
+    chain: input
+    rules:
+      - { action: accept, protocol: tcp, dport: "{{ item }}" }
+      - { action: drop }
+  loop: "{{ open_ports }}"
