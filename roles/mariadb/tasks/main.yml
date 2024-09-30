@@ -1,0 +1,25 @@
+---
+- name: Install MariaDB
+  apt:
+    name: mariadb-server
+    state: latest
+    update_cache: yes
+
+- name: Start and enable MariaDB service
+  service:
+    name: mariadb
+    state: started
+    enabled: yes
+
+- name: Create database and user for mysqld_exporter
+  mysql_db:
+    name: exporter_db
+    state: present
+
+- name: Create user for mysqld_exporter
+  mysql_user:
+    name: exporter_user
+    password: secure_password
+    priv: 'exporter_db.*:ALL'
+    state: present
+    
