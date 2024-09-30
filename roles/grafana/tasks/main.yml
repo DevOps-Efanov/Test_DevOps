@@ -1,0 +1,12 @@
+---
+- name: Grafana is running in Docker
+  docker_container:
+    name: grafana
+    image: grafana/grafana:latest
+    state: started
+    restart_policy: always
+
+- name: Import Grafana dashboards for OS and MariaDB metrics
+  copy:
+    src: dashboards/
+    dest: /opt/grafana/dashboards/
