@@ -1,0 +1,23 @@
+---
+- name: Install Docker and Docker Compose
+  apt:
+    name:
+      - docker.io
+      - docker-compose
+    state: latest
+
+- name: Docker service is running and enabled
+  service:
+    name: docker
+    state: started
+    enabled: yes
+
+- name: Create Docker Compose file for services
+  template:
+    src: docker-compose.yml.j2
+    dest: /opt/docker-compose.yml
+
+- name: Deploy services using Docker Compose
+  command: docker-compose up -d
+  args:
+    chdir: /opt/
