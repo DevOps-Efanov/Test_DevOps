@@ -1,0 +1,43 @@
+{
+  "dashboard": {
+    "title": "OS Metrics",
+    "panels": [
+      {
+        "title": "CPU Usage",
+        "type": "graph",
+        "targets": [
+          {
+            "target": "node_cpu_seconds_total"
+          }
+        ]
+      },
+      {
+        "title": "RAM Usage",
+        "type": "graph",
+        "targets": [
+          {
+            "target": "node_memory_MemAvailable_bytes"
+          }
+        ]
+      },
+      {
+        "title": "Disk Usage",
+        "type": "graph",
+        "targets": [
+          {
+            "target": "node_filesystem_avail_bytes"
+          }
+        ]
+      },
+      {
+        "title": "Network Traffic",
+        "type": "graph",
+        "targets": [
+          {
+            "target": "node_network_receive_bytes_total"
+          }
+        ]
+      }
+    ]
+  }
+}
