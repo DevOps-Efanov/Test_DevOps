@@ -1,0 +1,24 @@
+---
+- name: Deploy MariaDB and Node Exporter
+  hosts: server1
+  become: yes
+
+  vars:
+    open_ports:
+      - 22    # SSH
+      - 3306  # MariaDB
+      - 9100  # Node Exporter
+
+  roles:
+    - mariadb
+    - prometheus
+    - firewall
+
+- name: Deploy Docker, Prometheus, and Grafana
+  hosts: server2
+  become: yes
+
+  roles:
+    - docker
+    - prometheus
+    - grafana
