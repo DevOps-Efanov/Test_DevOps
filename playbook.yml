@@ -1,5 +1,5 @@
 ---
-- name: Deploy MariaDB and Node Exporter
+- name: Deploy MariaDB, Node Exporter and Firewall
   hosts: server1
   become: yes
 
@@ -14,7 +14,7 @@
     - prometheus
     - firewall
 
-- name: Deploy Docker, Prometheus, and Grafana
+- name: Deploy Docker, Prometheus and Grafana
   hosts: server2
   become: yes
 
