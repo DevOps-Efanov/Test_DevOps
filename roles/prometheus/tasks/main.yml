@@ -1,0 +1,32 @@
+---
+- name: Install Prometheus Node Exporter
+  apt:
+    name: prometheus-node-exporter
+    state: latest
+
+- name: Node Exporter is running and enabled
+  service:
+    name: prometheus-node-exporter
+    state: started
+    enabled: yes
+
+- name: Create Prometheus configuration directory
+  file:
+    path: /etc/prometheus
+    state: directory
+
+- name: Create Prometheus configuration file
+  template:
+    src: prometheus.yml.j2
+    dest: /etc/prometheus/prometheus.yml
+
+- name: Install mysqld_exporter
+  apt:
+    name: prometheus-mysqld-exporter
+    state: latest
+
+- name: mysqld_exporter is running and enabled
+  service:
+    name: prometheus-mysqld-exporter
+    state: started
+    enabled: yes
