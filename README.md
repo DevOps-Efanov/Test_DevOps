@@ -15,9 +15,9 @@
    
    git clone https://github.com/DevOps-Efanov/ansible_deployment.git
 
-   cd ansible-deployment
+   cd ansible_deployment
 
-2. Настройте файл hosts, указав IP-адреса ваших серверов.
+2. Настройте файл hosts, указав IP-адреса серверов.
 
 3. Запустите playbook:
    
