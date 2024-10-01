@@ -4,6 +4,7 @@
 
 ## Структура проекта
 
+- ansible.cfg — конфигурационный файл Ansible.
 - hosts — инвентарный файл для Ansible.
 - playbook.yml — основной playbook для развертывания.
 - roles/ — директория с ролями для установки MariaDB, Prometheus, Grafana и настройки фаервола.
@@ -13,7 +14,7 @@
 1. Клонируйте репозиторий:
    
    git clone https://github.com/DevOps-Efanov/ansible_deployment.git
-   
+
    cd ansible-deployment
 
 2. Настройте файл hosts, указав IP-адреса ваших серверов.
